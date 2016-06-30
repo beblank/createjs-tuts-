@@ -1,0 +1,14 @@
+{
+	"name": "tutsplus-advanced-canvas",
+	"version":"0.0.0",
+	"author": [
+		"Aditya Hadiwijaya <add_1t@yahoo.com>"
+	],
+	"description":"Tutsplus advanced canvas course",
+	"main": "index.html",
+	"license": "MIT",
+	"dependencies": {
+		"easeljs": "*"
+	}
+
+}
