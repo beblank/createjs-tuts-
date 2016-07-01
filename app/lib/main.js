@@ -12,6 +12,8 @@ domReady(function(){
 	group.y = 175;
 	stage.addChild(group);
 
+	group.on('tick', onGroupUpdate);
+
 	var circle = new c.Shape();
 	circle.graphics.beginFill('green').drawCircle(0,0,50);
 	circle.x = 100;
@@ -31,4 +33,8 @@ domReady(function(){
 
 function onUpdate(){
 	stage.update();
+}
+
+function onGroupUpdate(){
+	this.rotation -=1;
 }
