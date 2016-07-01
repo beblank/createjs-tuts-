@@ -14,5 +14,11 @@ domReady(function(){
 	circle.y = 100;
 	stage.addChild(circle);
 
+	var square = new c.Shape();
+	square.graphics.beginFill('green').drawRect(0,0,50,50);
+	square.x = 200;
+	square.y = 100;
+	stage.addChild(square);
+
 	stage.update();
 });
