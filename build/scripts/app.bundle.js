@@ -3,26 +3,23 @@ var utils = require('./utils'),
 	domReady = utils.domReady;
 
 var c = createjs;
+var stage = new c.Stage('main');
 
 console.log('Game Started: EaselJS version: ' + c.EaselJS.version);
 
 domReady(function(){
-	var stage = new c.Stage('main');
+	
+	var hero1 = new Hero('Hero1', 50, 50);
+	stage.addChild(hero1);
 
-	var circle = new c.Shape();
-	circle.graphics.beginFill('green').drawCircle(0,0,50);
-	circle.x = 100;
-	circle.y = 100;
-	stage.addChild(circle);
-
-	var square = new c.Shape();
-	square.graphics.beginFill('green').drawRect(0,0,50,50);
-	square.x = 200;
-	square.y = 100;
-	stage.addChild(square);
-
-	stage.update();
+	c.Ticker.timingMode = c.Ticker.RAF;
+	c.Ticker.setFPS(60);
+	c.Ticker.addEventListener('tick', onUpdate);
 });
+
+function onUpdate(){
+	stage.update();
+}
 },{"./utils":3}],2:[function(require,module,exports){
 module.exports = domReady;
 
