@@ -8,11 +8,10 @@ var stage = new c.Stage('main');
 console.log('Game Started: EaselJS version: ' + c.EaselJS.version);
 
 domReady(function(){
-	var hero1 = new Hero('Hero 1', 50, 50);
-	console.log(hero);
-	stage.addChild(hero1);
-
 	
+	var hero1 = new Hero('Hero1', 50, 50);
+	//hero1.Hero$initialize();
+	console.log(hero1);
 
 	c.Ticker.timingMode = c.Ticker.RAF;
 	c.Ticker.setFPS(60);
@@ -21,4 +20,8 @@ domReady(function(){
 
 function onUpdate(){
 	stage.update();
+}
+
+function onGroupUpdate(){
+	this.rotation -=1;
 }
